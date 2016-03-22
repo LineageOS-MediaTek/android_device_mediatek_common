@@ -10,6 +10,9 @@ TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
 # Charger
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
+# Common Properties
+TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
+
 # Display
 USE_OPENGL_RENDERER := true
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
@@ -19,6 +22,12 @@ BOARD_EGL_CFG := $(COMMON_PATH)/configs/egl.cfg
 
 # MTK Hardware
 BOARD_HAS_MTK_HARDWARE := true
+
+# Recovery
+TARGET_USERIMAGES_USE_EXT4 := true
+
+# RIL
+BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril
 
 # SELinux
 BOARD_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy
