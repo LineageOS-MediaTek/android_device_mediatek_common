@@ -105,6 +105,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
 
+# Power
+PRODUCT_PACKAGES += \
+    power.mt6737m
+
 # Sensor Calibration
 PRODUCT_PACKAGES += \
     libem_sensor_jni
