@@ -13,3 +13,6 @@ on post-fs-data
     # media - memory bandwidth
     chmod 0664 /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario
     chown system media /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario
+
+    # clear the sim switch flag
+    setprop persist.radio.simswitch ""
