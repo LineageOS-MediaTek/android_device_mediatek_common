@@ -1,6 +1,10 @@
 # Common overlays
 DEVICE_PACKAGE_OVERLAYS += vendor/mad/overlay
 
+# Display
+PRODUCT_PACKAGES += \
+    libion
+
 # GPS
 PRODUCT_COPY_FILES += \
     vendor/mad/prebuilt/etc/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
