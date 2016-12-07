@@ -23,6 +23,7 @@ type devmap_device, dev_type;
 type fm_device, dev_type;
 type Vcodec_device, dev_type;
 type M4U_device_device, dev_type;
+type mtk_smi_device, dev_type;
 
 # NFC
 type mt6605_device, dev_type;

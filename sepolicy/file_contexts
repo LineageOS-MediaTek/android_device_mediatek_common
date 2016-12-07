@@ -47,10 +47,10 @@
 /dev/kd_camera_hw                                               u:object_r:camera_device:s0
 /dev/kd_camera_flashlight                                       u:object_r:camera_device:s0
 /dev/MAINAF                                                     u:object_r:camera_device:s0
-/dev/MTK_SMI                                                    u:object_r:camera_device:s0
 /dev/mtk_jpeg(/.*)                                              u:object_r:camera_device:s0
 /dev/DW9714AF(/.*)?                                             u:object_r:camera_device:s0
 /dev/CAM_CAL_DRV(/.*)?                                          u:object_r:camera_device:s0
+/dev/MTK_SMI                                                    u:object_r:mtk_smi_device:s0
 /dev/MT_pmic_adc_cali                                           u:object_r:pmic_adc_device:s0
 /dev/als_ps(/.*)?                                               u:object_r:als_ps_device:s0
 /dev/mtk-adc-cali(/.*)?                                         u:object_r:mtk-adc-cali_device:s0

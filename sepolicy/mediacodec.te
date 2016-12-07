@@ -7,6 +7,7 @@ allow mediacodec ccci_device:chr_file rw_file_perms;
 allow mediacodec Vcodec_device:chr_file rw_file_perms;
 allow mediacodec devmap_device:chr_file r_file_perms;
 allow mediacodec devmap_device:chr_file { ioctl };
+allow mediacodec mtk_smi_device:chr_file { ioctl read open };
 allow mediacodec proc:file { open read ioctl };
 allow mediacodec sysfs:file { open read write };
 allow mediacodec sysfs_devinfo:file { open read write };
