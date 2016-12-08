@@ -45,6 +45,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
+# WallpaperPicker
+PRODUCT_PACKAGES += \
+    WallpaperPicker
+
 # Sensor Calibration
 PRODUCT_PACKAGES += \
     libem_sensor_jni
