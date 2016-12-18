@@ -11,6 +11,7 @@ allow cameraserver mtk_smi_device:chr_file rw_file_perms;
 allow cameraserver proc:file { read ioctl open };
 allow cameraserver devmap_device:chr_file r_file_perms;
 allow cameraserver devmap_device:chr_file { ioctl };
+allow cameraserver sysfs_devinfo:file rw_file_perms;
 
 # PQ
 allow cameraserver pq_service:service_manager find;

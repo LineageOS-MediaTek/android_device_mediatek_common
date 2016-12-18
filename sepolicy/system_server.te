@@ -21,3 +21,8 @@ allow system_server fast_charge_sysfs:file rw_file_perms;
 
 # Smart Wake
 allow system_server smartwake_sysfs:file rw_file_perms;
+
+# Fingerprint
+binder_call(system_server, etsd)
+allow system_server etsd_service:service_manager find;
+allow fingerprintd etsd_service:service_manager find;

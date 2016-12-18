@@ -9,6 +9,7 @@
 /system/bin/muxreport                                           u:object_r:muxreport_exec:s0
 /system/bin/msensord                                            u:object_r:msensord_exec:s0
 /system/bin/qmc6983d                                            u:object_r:qmc6983d_exec:s0
+/system/bin/mxg2320d                                            u:object_r:mxg2320d_exec:s0
 /system/bin/mtk_agpsd                                           u:object_r:mtk_agpsd_exec:s0
 /system/bin/nvram_daemon                                        u:object_r:nvram_daemon_exec:s0
 /system/bin/pq                                                  u:object_r:pq_exec:s0
@@ -19,6 +20,7 @@
 /system/bin/wmt_loader                                          u:object_r:wmt_loader_exec:s0
 /system/bin/em_svr                                              u:object_r:em_svr_exec:s0
 /system/bin/kpoc_charger                                        u:object_r:kpoc_charger_exec:s0
+/system/bin/etsd                                                u:object_r:etsd_exec:s0
 
 # Meta mode
 /system/bin/meta_tst                                            u:object_r:meta_tst_exec:s0
@@ -49,6 +51,7 @@
 /dev/MAINAF                                                     u:object_r:camera_device:s0
 /dev/mtk_jpeg(/.*)                                              u:object_r:camera_device:s0
 /dev/DW9714AF(/.*)?                                             u:object_r:camera_device:s0
+/dev/FM50AF(/.*)?                                               u:object_r:camera_device:s0
 /dev/CAM_CAL_DRV(/.*)?                                          u:object_r:camera_device:s0
 /dev/MTK_SMI                                                    u:object_r:mtk_smi_device:s0
 /dev/MT_pmic_adc_cali                                           u:object_r:pmic_adc_device:s0
@@ -68,6 +71,7 @@
 /dev/Vcodec                                                     u:object_r:Vcodec_device:s0
 /dev/M4U_device(/.*)?                                           u:object_r:M4U_device_device:s0
 /dev/mt6605                                                     u:object_r:mt6605_device:s0
+/dev/esfp0(/.*)?                                                u:object_r:esfp0_device:s0
 
 # Sockets
 /dev/socket/rild[2-4]                                           u:object_r:rild_socket:s0
