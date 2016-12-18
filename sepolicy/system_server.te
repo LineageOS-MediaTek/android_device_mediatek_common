@@ -26,3 +26,6 @@ allow system_server smartwake_sysfs:file rw_file_perms;
 binder_call(system_server, etsd)
 allow system_server etsd_service:service_manager find;
 allow fingerprintd etsd_service:service_manager find;
+
+# External storage
+allow system_server storage_stub_file:dir { getattr };

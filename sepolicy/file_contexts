@@ -22,6 +22,14 @@
 /system/bin/kpoc_charger                                        u:object_r:kpoc_charger_exec:s0
 /system/bin/etsd                                                u:object_r:etsd_exec:s0
 
+# exfat & ntfs
+/system/bin/mkfs\.exfat                                         u:object_r:mkfs_exec:s0
+/system/bin/mkfs\.ntfs                                          u:object_r:mkfs_exec:s0
+/system/bin/mount\.ntfs                                         u:object_r:mkfs_exec:s0
+/system/bin/mount\.exfat                                        u:object_r:mkfs_exec:s0
+/system/bin/fsck\.ntfs                                          u:object_r:fsck_exec:s0
+/system/bin/fsck\.exfat                                         u:object_r:fsck_exec:s0
+
 # Meta mode
 /system/bin/meta_tst                                            u:object_r:meta_tst_exec:s0
 /system/bin/factory                                             u:object_r:factory_exec:s0
