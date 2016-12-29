@@ -8,6 +8,8 @@ allow ril-daemon-mtk ccci_device:chr_file rw_file_perms;
 allow ril-daemon-mtk devpts:chr_file rw_file_perms;
 allow ril-daemon-mtk self:capability setuid;
 allow ril-daemon-mtk sysfs_wake_lock:file rw_file_perms;
+allow ril-daemon-mtk sysfs_ccci:dir search;
+allow ril-daemon-mtk sysfs_ccci:file r_file_perms;
 
 allow ril-daemon-mtk self:udp_socket create_socket_perms;
 allow ril-daemon-mtk self:capability { setuid net_admin net_raw };

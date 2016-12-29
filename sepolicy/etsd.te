@@ -10,6 +10,7 @@ allow etsd fingerprintd:binder { call transfer };
 allow etsd esfp0_device:chr_file rw_file_perms;
 
 allow etsd fingerprintd_data_file:file { create_file_perms };
+allow etsd fingerprintd_data_file:file { open read write };
 allow etsd fingerprintd_data_file:dir rw_dir_perms;
 
 use_keystore(etsd)
