@@ -10,6 +10,7 @@
 /system/bin/msensord                                            u:object_r:msensord_exec:s0
 /system/bin/qmc6983d                                            u:object_r:qmc6983d_exec:s0
 /system/bin/mxg2320d                                            u:object_r:mxg2320d_exec:s0
+/system/bin/memsicd3416x                                        u:object_r:memsicd3416x_exec:s0
 /system/bin/mtk_agpsd                                           u:object_r:mtk_agpsd_exec:s0
 /system/bin/nvram_daemon                                        u:object_r:nvram_daemon_exec:s0
 /system/bin/pq                                                  u:object_r:pq_exec:s0

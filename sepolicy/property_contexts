@@ -6,6 +6,7 @@ gps.clock.type      u:object_r:mnld_prop:s0
 gps.gps.version     u:object_r:mnld_prop:s0
 ctl.qmc6983d        u:object_r:ctl_qmc6983d_prop:s0
 ctl.mxg2320d        u:object_r:ctl_mxg2320d_prop:s0
+ctl.memsicd3416x    u:object_r:ctl_memsicd3416x_prop:s0
 ctl.ccci_fsd        u:object_r:ctl_ccci_fsd_prop:s0
 ctl.gsm0710muxd     u:object_r:ctl_gsm0710muxd_prop:s0
 ctl.gsm0710muxd-s   u:object_r:ctl_gsm0710muxd_prop:s0
