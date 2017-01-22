@@ -59,6 +59,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
+# Tethering
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.tethering.noprovisioning=true
+
 # include other configs
 include vendor/mad/config/permissions.mk
 include vendor/mad/config/media.mk
