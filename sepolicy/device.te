@@ -30,6 +30,7 @@ type mt6605_device, dev_type;
 
 # Fingerprint
 type esfp0_device, dev_type;
+type madev0_device, dev_type;
 
 # Block devices
 type proinfo_device, dev_type;
