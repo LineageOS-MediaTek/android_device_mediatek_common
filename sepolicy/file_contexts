@@ -81,6 +81,8 @@
 /dev/M4U_device(/.*)?                                           u:object_r:M4U_device_device:s0
 /dev/mt6605                                                     u:object_r:mt6605_device:s0
 /dev/esfp0(/.*)?                                                u:object_r:esfp0_device:s0
+/dev/madev0                                                     u:object_r:madev0_device:s0
+/dev/irtx                                                       u:object_r:irtx_device:s0
 
 # Sockets
 /dev/socket/rild[2-4]                                           u:object_r:rild_socket:s0
