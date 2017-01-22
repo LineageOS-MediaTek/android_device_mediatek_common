@@ -32,6 +32,9 @@ type mt6605_device, dev_type;
 type esfp0_device, dev_type;
 type madev0_device, dev_type;
 
+# IR
+type irtx_device, dev_type;
+
 # Block devices
 type proinfo_device, dev_type;
 type nvram_device, dev_type;
