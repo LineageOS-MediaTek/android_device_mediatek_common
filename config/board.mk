@@ -28,6 +28,9 @@ WIFI_DRIVER_FW_PATH_P2P := P2P
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 
+# Charger
+BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
+
 # Recovery
 RECOVERY_VARIANT := twrp
 

@@ -45,6 +45,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    mad_charger_res_images
+
 # WallpaperPicker
 PRODUCT_PACKAGES += \
     WallpaperPicker
