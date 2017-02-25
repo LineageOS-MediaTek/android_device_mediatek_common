@@ -58,6 +58,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libem_sensor_jni
 
+# SchedulePowerOnOff
+PRODUCT_PACKAGES += \
+SchedulePowerOnOff
+
 # Bootanimation
 PRODUCT_COPY_FILES += \
     vendor/mad/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
