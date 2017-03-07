@@ -62,6 +62,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 SchedulePowerOnOff
 
+# ThemeInterfacer
+PRODUCT_PACKAGES += \
+    ThemeInterfacer
+
+
 # Bootanimation
 PRODUCT_COPY_FILES += \
     vendor/mad/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
