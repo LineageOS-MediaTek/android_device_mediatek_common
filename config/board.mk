@@ -64,3 +64,7 @@ endif
 # SELinux
 BOARD_SEPOLICY_DIRS := \
     vendor/mad/sepolicy
+
+# DEXPREOPT
+WITH_DEXPREOPT := true
+DONT_DEXPREOPT_PREBUILTS := true
