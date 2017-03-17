@@ -74,6 +74,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	LockClock
 
+# Eleven
+PRODUCT_PACKAGES += \
+	Eleven
+
 # Bootanimation
 PRODUCT_COPY_FILES += \
     vendor/mad/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
