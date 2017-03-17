@@ -70,6 +70,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	OmniJaws
 
+# LockClock
+PRODUCT_PACKAGES += \
+	LockClock
+
 # Bootanimation
 PRODUCT_COPY_FILES += \
     vendor/mad/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
