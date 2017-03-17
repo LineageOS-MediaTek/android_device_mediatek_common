@@ -66,6 +66,9 @@ SchedulePowerOnOff
 PRODUCT_PACKAGES += \
     ThemeInterfacer
 
+# OmniJaws
+PRODUCT_PACKAGES += \
+	OmniJaws
 
 # Bootanimation
 PRODUCT_COPY_FILES += \
