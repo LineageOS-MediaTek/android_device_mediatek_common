@@ -77,6 +77,27 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
 
+#madOS Versioning
+ANDROID_VERSION = 7.1.1
+MADOS_VERSION = v1.0
+
+ifndef MADOS_BUILD_TYPE
+    MADOS_BUILD_TYPE := OFFICIAL
+    PLATFORM_VERSION_CODENAME := OFFICIAL
+endif 
+
+MADOS_MOD_VERSION := madOS-$(MADOS_VERSION)-$(shell date -u +%Y%m%d-%H%M)-$(MADOS_BUILD_TYPE)
+
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.mados.version=$(MADOS_VERSION) \
+  ro.mados.releasetype=$(MADOS_BUILD_TYPE) \
+  ro.modversion=$(MADOS_MOD_VERSION)
+  
+MADOS_DISPLAY_VERSION := madOS-$(MADOS_VERSION)-$(MADOS_BUILD_TYPE)
+
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.mados.display.version=$(MADOS_DISPLAY_VERSION)
+
 # include other configs
 include vendor/mad/config/permissions.mk
 include vendor/mad/config/media.mk
