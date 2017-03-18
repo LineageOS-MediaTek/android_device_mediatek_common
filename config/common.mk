@@ -66,14 +66,6 @@ SchedulePowerOnOff
 PRODUCT_PACKAGES += \
     ThemeInterfacer
 
-# OmniJaws
-PRODUCT_PACKAGES += \
-	OmniJaws
-
-# LockClock
-PRODUCT_PACKAGES += \
-	LockClock
-
 # Eleven
 PRODUCT_PACKAGES += \
 	Eleven
