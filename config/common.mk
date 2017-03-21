@@ -76,10 +76,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
-# Tethering
-PRODUCT_PROPERTY_OVERRIDES += \
-    net.tethering.noprovisioning=true
-
 # madOS Versioning
 ANDROID_VERSION = 7.1.1
 MADOS_VERSION = 7
@@ -106,3 +102,4 @@ include vendor/mad/config/permissions.mk
 include vendor/mad/config/media.mk
 include vendor/mad/config/wifi.mk
 include vendor/mad/config/telephony.mk
+include vendor/mad/config/google_override.mk
