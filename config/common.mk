@@ -80,7 +80,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
 
-#madOS Versioning
+# madOS Versioning
 ANDROID_VERSION = 7.1.1
 MADOS_VERSION = 7
 
