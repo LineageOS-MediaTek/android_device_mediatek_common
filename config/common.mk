@@ -17,6 +17,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     madCamera
 
+# madLauncher
+PRODUCT_PACKAGES += \
+    madLauncher
+
+# madGallery
+PRODUCT_PACKAGES += \
+    madGallery
+
 # FMRadio
 PRODUCT_PACKAGES += \
     libfmjni \
