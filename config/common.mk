@@ -13,9 +13,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Chromium
 
-# Snap
+# madCamera
 PRODUCT_PACKAGES += \
-    Snap
+    madCamera
 
 # FMRadio
 PRODUCT_PACKAGES += \
@@ -83,7 +83,7 @@ MADOS_VERSION = 1.0
 ifndef MADOS_BUILD_TYPE
     MADOS_BUILD_TYPE := OFFICIAL
     PLATFORM_VERSION_CODENAME := OFFICIAL
-endif 
+endif
 
 MADOS_MOD_VERSION := madOS-$(MADOS_VERSION)-$(shell date -u +%Y%m%d)-$(MADOS_BUILD_TYPE)
 
@@ -91,7 +91,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.mados.version=$(MADOS_VERSION) \
   ro.mados.releasetype=$(MADOS_BUILD_TYPE) \
   ro.modversion=$(MADOS_MOD_VERSION)
-  
+
 MADOS_DISPLAY_VERSION := madOS-$(MADOS_VERSION)-$(MADOS_BUILD_TYPE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
