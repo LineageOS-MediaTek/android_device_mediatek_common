@@ -25,6 +25,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     madGallery
 
+# Lineage LockClock
+PRODUCT_PACKAGES += \
+    LockClock
+
 # FMRadio
 PRODUCT_PACKAGES += \
     libfmjni \
