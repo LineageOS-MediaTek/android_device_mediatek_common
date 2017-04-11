@@ -13,6 +13,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     Chromium
 
+# OmniStyle
+PRODUCT_PACKAGES += \
+    OmniStyle
+
 # madCamera
 PRODUCT_PACKAGES += \
     madCamera
