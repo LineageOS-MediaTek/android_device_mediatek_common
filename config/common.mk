@@ -37,10 +37,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
 
-# LockClock
-PRODUCT_PACKAGES += \
-	LockClock
-
 # FMRadio
 PRODUCT_PACKAGES += \
     libfmjni \
