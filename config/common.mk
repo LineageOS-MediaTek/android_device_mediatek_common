@@ -17,6 +17,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     OmniStyle
 
+# OmniJaws
+PRODUCT_PACKAGES += \
+    OmniJaws
+
 # madCamera
 PRODUCT_PACKAGES += \
     madCamera
