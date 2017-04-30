@@ -43,7 +43,7 @@ PRODUCT_PACKAGES += \
 
 # LockClock
 PRODUCT_PACKAGES += \
-	LockClock
+    LockClock
 
 # FMRadio
 PRODUCT_PACKAGES += \
@@ -86,17 +86,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libem_sensor_jni
 
-# SchedulePowerOnOff
-PRODUCT_PACKAGES += \
-SchedulePowerOnOff
-
 # ThemeInterfacer
 PRODUCT_PACKAGES += \
     ThemeInterfacer
 
 # Eleven
 PRODUCT_PACKAGES += \
-	Eleven
+    Eleven
 
 # Bootanimation
 PRODUCT_COPY_FILES += \
@@ -115,14 +111,14 @@ endif
 MADOS_MOD_VERSION := madOS-$(MADOS_VERSION)-$(shell date -u +%Y%m%d)-$(MADOS_BUILD_TYPE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.mados.version=$(MADOS_VERSION) \
-  ro.mados.releasetype=$(MADOS_BUILD_TYPE) \
-  ro.modversion=$(MADOS_MOD_VERSION)
+    ro.mados.version=$(MADOS_VERSION) \
+    ro.mados.releasetype=$(MADOS_BUILD_TYPE) \
+    ro.modversion=$(MADOS_MOD_VERSION)
 
 MADOS_DISPLAY_VERSION := madOS-$(MADOS_VERSION)-$(MADOS_BUILD_TYPE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.mados.display.version=$(MADOS_DISPLAY_VERSION)
+    ro.mados.display.version=$(MADOS_DISPLAY_VERSION)
 
 # include other configs
 include vendor/mad/config/permissions.mk
