@@ -1,6 +1,14 @@
 # Common overlays
 DEVICE_PACKAGE_OVERLAYS += vendor/mad/overlay
 
+# Shim libraries
+PRODUCT_PACKAGES += \
+    libmtkshim_log \
+    libmtkshim_audio \
+    libmtkshim_ui \
+    libmtkshim_omx \
+    libmtkshim_gps
+
 # Display
 PRODUCT_PACKAGES += \
     libion
