@@ -25,6 +25,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     OmniStyle
 
+# OmniJaws
+PRODUCT_PACKAGES += \
+    OmniJaws
+
 # madCamera
 PRODUCT_PACKAGES += \
     madCamera
@@ -40,10 +44,6 @@ PRODUCT_PACKAGES += \
 # Include explicitly to work around Facelock issues
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
-
-# LockClock
-PRODUCT_PACKAGES += \
-    LockClock
 
 # FMRadio
 PRODUCT_PACKAGES += \
