@@ -159,7 +159,7 @@
 <spnOverride numeric="26606" spn="CTS"/>
 <spnOverride numeric="26609" spn="Shine"/>
 <spnOverride numeric="26801" spn="vodafone P"/>
-<spnOverride numeric="26803" spn="P OPTIMUS"/>
+<spnOverride numeric="26803" spn="NOS"/>
 <spnOverride numeric="26806" spn="MEO"/>
 <spnOverride numeric="27001" spn="L LUXGSM"/>
 <spnOverride numeric="27077" spn="L TANGO"/>
@@ -204,7 +204,7 @@
 <spnOverride numeric="29340" spn="Si.mobil"/>
 <spnOverride numeric="29341" spn="MOBITEL"/>
 <spnOverride numeric="29364" spn="T-2"/>
-<spnOverride numeric="29370" spn="SI TUSMOBIL"/>
+<spnOverride numeric="29370" spn="Telemach"/>
 <spnOverride numeric="29401" spn="T-Mobile MK"/>
 <spnOverride numeric="29402" spn="ONE MK"/>
 <spnOverride numeric="29403" spn="Vip MKD"/>
