@@ -10,9 +10,14 @@ allow ril-daemon-mtk self:capability setuid;
 allow ril-daemon-mtk sysfs_wake_lock:file rw_file_perms;
 allow ril-daemon-mtk sysfs_ccci:dir search;
 allow ril-daemon-mtk sysfs_ccci:file r_file_perms;
+allow ril-daemon-mtk block_device:dir search;
+allow ril-daemon-mtk para_block_device:blk_file rw_file_perms;
 
 allow ril-daemon-mtk self:udp_socket create_socket_perms;
 allow ril-daemon-mtk self:capability { setuid net_admin net_raw };
+
+allow ril-daemon-mtk mal_mfi_socket:sock_file { w_file_perms };
+allow ril-daemon-mtk mtkmal:unix_stream_socket connectto;
 
 allow ril-daemon-mtk radio_device:dir search;
 allow ril-daemon-mtk radio_prop:property_service set;

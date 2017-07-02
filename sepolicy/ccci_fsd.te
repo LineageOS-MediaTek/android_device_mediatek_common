@@ -8,6 +8,7 @@ allow ccci_fsd ccci_cfg_file:dir create_dir_perms;
 allow ccci_fsd ccci_cfg_file:file create_file_perms;
 allow ccci_fsd nvdata_file:dir create_dir_perms;
 allow ccci_fsd nvdata_file:file create_file_perms;
+allow ccci_fsd nvdata_file:lnk_file r_file_perms;
 allow ccci_fsd protect_f_data_file:dir create_dir_perms;
 allow ccci_fsd protect_f_data_file:file create_file_perms;
 allow ccci_fsd protect_s_data_file:dir create_dir_perms;

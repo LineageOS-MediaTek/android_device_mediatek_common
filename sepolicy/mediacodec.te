@@ -11,6 +11,13 @@ allow mediacodec mtk_smi_device:chr_file { ioctl read open };
 allow mediacodec proc:file { open read ioctl };
 allow mediacodec sysfs:file { open read write };
 allow mediacodec sysfs_devinfo:file { open read write };
+allow mediacodec proc_meminfo:file { open read getattr };
+
+allow mediacodec property_socket:sock_file write;
+allow mediacodec init:unix_stream_socket connectto;
 
 # M4U
 allow mediacodec M4U_device_device:chr_file rw_file_perms;
+
+# PQ
+allow mediacodec pq_service:service_manager find;

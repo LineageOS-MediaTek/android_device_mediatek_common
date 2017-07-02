@@ -11,3 +11,5 @@ allow pq pq_service:service_manager add;
 unix_socket_connect(pq, property, init)
 
 allow pq pq_conf_prop:property_service set;
+
+allow pq graphics_device:chr_file { open read ioctl };

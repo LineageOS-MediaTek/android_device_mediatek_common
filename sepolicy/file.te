@@ -30,6 +30,7 @@ type proc_wmt, fs_type;
 
 type agpsd_socket, file_type;
 type mnld_socket, file_type;
+type mal_mfi_socket, file_type;
 
 type nfc_socket, file_type;
 

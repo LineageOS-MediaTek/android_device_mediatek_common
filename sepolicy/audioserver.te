@@ -1,6 +1,7 @@
 # nvram
 allow audioserver nvdata_file:dir rw_dir_perms;
 allow audioserver nvdata_file:file create_file_perms;
+allow audioserver nvdata_file:lnk_file r_file_perms;
 allow audioserver ccci_device:chr_file rw_file_perms;
 
 # fm radio

@@ -20,6 +20,7 @@ allow mnld mnld_data_file:file create_file_perms;
 
 allow mnld nvdata_file:dir rw_dir_perms;
 allow mnld nvdata_file:file create_file_perms;
+allow mnld nvdata_file:lnk_file r_file_perms;
 allow mnld nvram_device:blk_file rw_file_perms;
 
 allow mnld sysfs_gps_file:dir search;
