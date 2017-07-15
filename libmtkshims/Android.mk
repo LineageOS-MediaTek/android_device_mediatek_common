@@ -13,6 +13,17 @@ ifeq ($(TARGET_INCLUDE_XLOG_SYMBOLS),true)
 endif
 
 # audio symbols
+ifeq ($(TARGET_INCLUDE_LIBC_SYMBOLS),true)
+    include $(CLEAR_VARS)
+
+    LOCAL_SRC_FILES := bionic.cpp
+    LOCAL_MODULE := libmtkshim_bionic
+    LOCAL_MODULE_TAGS := optional
+
+    include $(BUILD_SHARED_LIBRARY)
+endif
+
+# audio symbols
 ifeq ($(TARGET_INCLUDE_AUDIO_SYMBOLS),true)
     include $(CLEAR_VARS)
 
