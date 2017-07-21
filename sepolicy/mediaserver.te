@@ -5,3 +5,5 @@ allow mediaserver ccci_device:chr_file rw_file_perms;
 
 # PQ
 allow mediaserver pq_service:service_manager find;
+
+allow mediaserver sysfs_devinfo:file r_file_perms;

@@ -28,3 +28,6 @@ allow ril-daemon-mtk ril_sim_inserted_status:property_service set;
 allow ril-daemon-mtk serial_number_prop:property_service set;
 
 unix_socket_connect(ril-daemon-mtk, property, init)
+
+# Access to wake locks
+wakelock_use(ril-daemon-mtk)
