@@ -14,6 +14,8 @@ type sysfs_gps_file, fs_type, sysfs_type;
 type sysfs_ccci, fs_type, sysfs_type;
 type sysfs_devinfo, fs_type, sysfs_type;
 type sysfs_membw, fs_type, sysfs_type;
+type sysfs_boot_mode, fs_type, sysfs_type;
+type sysfs_ddr_type, fs_type, sysfs_type;
 
 type msensord_daemon_sysfs, fs_type, sysfs_type;
 

@@ -131,6 +131,8 @@
 /sys/kernel/ccci(/.*)?                                          u:object_r:sysfs_ccci:s0
 /sys/bus/platform/drivers/dev_info/dev_info                     u:object_r:sysfs_devinfo:s0
 /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario      u:object_r:sysfs_membw:s0
+/sys/bus/platform/drivers/ddr_type/ddr_type                     u:object_r:sysfs_ddr_type:s0
+/sys/devices/virtual/BOOT/BOOT/boot/boot_mode                   u:object_r:sysfs_boot_mode:s0
 /sys/devices/platform/mtk_disp_mgr.0/rgb                        u:object_r:display_color_sysfs:s0
 /sys/bus/platform/drivers/msensor/daemon                        u:object_r:msensord_daemon_sysfs:s0
 /sys/bus/platform/drivers/gyroscope/gyro_orientation            u:object_r:gyro_orientation_sysfs:s0
