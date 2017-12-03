@@ -195,6 +195,9 @@ USE_MINIKIN := true
 # Light HAL
 TARGET_PROVIDES_LIBLIGHT := true
 
+# Misc
+SUPPRESS_MTK_AUDIO_BLOB_ERR_MSG := true
+
 # MTK Hardware
 BOARD_USES_MTK_HARDWARE := true
 
