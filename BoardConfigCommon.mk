@@ -1,5 +1,7 @@
 TARGET_MEDIATEK_COMMON := true
 
+COMMON_PATH := device/mediatek/common
+
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
 
