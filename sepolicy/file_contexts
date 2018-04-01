@@ -31,14 +31,6 @@
 /(system|system\/vendor|vendor)/bin/ged_srv                     u:object_r:ged_srv_exec:s0
 /(system|system\/vendor|vendor)/bin/spm_loader                  u:object_r:spm_loader_exec:s0
 
-# exfat & ntfs
-/system/bin/mkfs\.exfat                                         u:object_r:mkfs_exec:s0
-/system/bin/mkfs\.ntfs                                          u:object_r:mkfs_exec:s0
-/system/bin/mount\.ntfs                                         u:object_r:mkfs_exec:s0
-/system/bin/mount\.exfat                                        u:object_r:mkfs_exec:s0
-/system/bin/fsck\.ntfs                                          u:object_r:fsck_exec:s0
-/system/bin/fsck\.exfat                                         u:object_r:fsck_exec:s0
-
 # Meta mode
 /(system|system\/vendor|vendor)/bin/meta_tst                    u:object_r:meta_tst_exec:s0
 /(system|system\/vendor|vendor)/bin/factory                     u:object_r:factory_exec:s0

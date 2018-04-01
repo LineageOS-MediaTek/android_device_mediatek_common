@@ -35,7 +35,3 @@ type mnld_socket, file_type;
 type mal_mfi_socket, file_type;
 
 type nfc_socket, file_type;
-
-# Filesystems
-type exfat, sdcard_type, fs_type, mlstrustedobject;
-type ntfs, sdcard_type, fs_type, mlstrustedobject;
