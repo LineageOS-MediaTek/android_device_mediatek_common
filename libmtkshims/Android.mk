@@ -39,7 +39,7 @@ ifeq ($(TARGET_INCLUDE_UI_SYMBOLS),true)
     include $(CLEAR_VARS)
 
     LOCAL_SRC_FILES := GraphicBuffer.cpp
-    LOCAL_SHARED_LIBRARIES := libui
+    LOCAL_SHARED_LIBRARIES := libui libgui
     LOCAL_MODULE := libmtkshim_ui
     LOCAL_MODULE_TAGS := optional
 
