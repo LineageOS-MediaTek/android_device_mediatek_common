@@ -12,12 +12,24 @@ ifeq ($(TARGET_INCLUDE_XLOG_SYMBOLS),true)
     include $(BUILD_SHARED_LIBRARY)
 endif
 
-# audio symbols
+# libc symbols
 ifeq ($(TARGET_INCLUDE_LIBC_SYMBOLS),true)
     include $(CLEAR_VARS)
 
     LOCAL_SRC_FILES := bionic.cpp
     LOCAL_MODULE := libmtkshim_bionic
+    LOCAL_MODULE_TAGS := optional
+
+    include $(BUILD_SHARED_LIBRARY)
+endif
+
+# netutils symbols
+ifeq ($(TARGET_INCLUDE_NETUTILS_SYMBOLS),true)
+    include $(CLEAR_VARS)
+
+    LOCAL_SRC_FILES := netutils.c
+    LOCAL_MODULE := libmtkshim_ifc
+    LOCAL_C_INCLUDES += system/core/libnetutils/include
     LOCAL_MODULE_TAGS := optional
 
     include $(BUILD_SHARED_LIBRARY)
