@@ -30,3 +30,5 @@ allow fingerprintd etsd_service:service_manager find;
 # IR
 allow system_server irtx_device:chr_file rw_file_perms;
 
+# Guiext
+allow system_server guiext-server_service:service_manager find;
