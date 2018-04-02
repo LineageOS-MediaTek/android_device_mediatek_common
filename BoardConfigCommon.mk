@@ -2,6 +2,9 @@ TARGET_MEDIATEK_COMMON := true
 
 COMMON_PATH := device/mediatek/common
 
+# Headers
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+
 # Audio
 # USE_XML_AUDIO_POLICY_CONF := 1
 
