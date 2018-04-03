@@ -1,3 +1,4 @@
+#include <errno.h>
 #include <stdio.h>
 #include <string.h>
 #include <linux/sockios.h>
@@ -5,7 +6,7 @@
 #include <log/log.h>
 #include <sys/types.h>
 #include <netutils/ifc.h>
-#include "../../../../bionic/libc/kernel/uapi/linux/if.h"
+#include "../../../../bionic/libc/kernel/uapi/linux/if.h" //FIX THIS
 
 #define SIOCSTXQSTATE (SIOCDEVPRIVATE + 0)  //start/stop ccmni tx queue
 #define SIOCSCCMNICFG (SIOCDEVPRIVATE + 1)  //configure ccmni/md remapping
