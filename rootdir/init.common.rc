@@ -14,5 +14,8 @@ on post-fs-data
     chmod 0664 /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario
     chown system media /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario
 
+    chmod 0660 /sys/devices/platform/mtk_disp_mgr.0/rgb
+    chown system system /sys/devices/platform/mtk_disp_mgr.0/rgb
+
     # clear the sim switch flag
     setprop persist.radio.simswitch ""
