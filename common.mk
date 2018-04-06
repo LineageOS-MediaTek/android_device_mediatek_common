@@ -13,6 +13,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libion
 
+# Doze
+PRODUCT_PACKAGES += \
+    Doze
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
