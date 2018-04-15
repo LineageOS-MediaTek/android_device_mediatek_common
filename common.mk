@@ -1,3 +1,15 @@
+TARGET_MEDIATEK_COMMON := true
+
+COMMON_PATH := device/mediatek/common
+
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
+
+# Headers
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
+
+#### Packages ####
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.r_submix.default \
@@ -44,6 +56,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+#### Copy files ####
+
 # Audio
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:/system/etc/audio_policy_volumes.xml \
@@ -68,7 +82,7 @@ endif
 
 # GPS
 PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
+     $(COMMON_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -103,17 +117,17 @@ PRODUCT_COPY_FILES += \
 
 # Telephony
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/apns-conf.xml:system/etc/apns-conf.xml \
-    $(LOCAL_PATH)/configs/ecc_list.xml:system/etc/ecc_list.xml \
-    $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
+    $(COMMON_PATH)/configs/apns-conf.xml:system/etc/apns-conf.xml \
+    $(COMMON_PATH)/configs/ecc_list.xml:system/etc/ecc_list.xml \
+    $(COMMON_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
 
 # WIFI
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+    $(COMMON_PATH)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(COMMON_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(COMMON_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
-# Props
+#### Props ####
 
 # Extras
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -152,3 +166,65 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Dalvik Tweak
 PRODUCT_TAGS += dalvik.gc.type-precise
+
+#### BoardConfigs ####
+
+# Bluetooth
+BOARD_HAVE_BLUETOOTH := true
+
+# Boot animation
+TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
+
+# Camera
+USE_CAMERA_STUB := true
+
+# Charger
+BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
+
+# Common Properties
+TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
+
+# Cyanogenmod H/W Hooks
+BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw
+
+# Disable memcpy opt (for audio libraries)
+TARGET_CPU_MEMCPY_OPT_DISABLE := true
+
+# Display
+USE_OPENGL_RENDERER := true
+# BOARD_EGL_WORKAROUND_BUG_10194508 := true
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+PRESENT_TIME_OFFSET_FROM_VSYNC_NS := 0
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
+BOARD_EGL_CFG := $(COMMON_PATH)/configs/egl.cfg
+
+# Enable Minikin text layout engine (will be the default soon)
+USE_MINIKIN := true
+
+# Fonts
+EXTENDED_FONT_FOOTPRINT := true
+
+# MTK Hardware
+BOARD_USES_MTK_HARDWARE := true
+
+# RIL
+BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril
+
+# SELinux
+BOARD_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy
+
+# Wifi
+BOARD_WLAN_DEVICE := MediaTek
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_mt66xx
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_mt66xx
+WIFI_DRIVER_FW_PATH_PARAM := /dev/wmtWifi
+WIFI_DRIVER_FW_PATH_AP := AP
+WIFI_DRIVER_FW_PATH_STA := STA
+WIFI_DRIVER_FW_PATH_P2P := P2P
+WIFI_DRIVER_STATE_CTRL_PARAM := /dev/wmtWifi
+WIFI_DRIVER_STATE_ON := 1
+WIFI_DRIVER_STATE_OFF := 0
