@@ -1,6 +1,6 @@
-TARGET_MEDIATEK_COMMON := true
+TARGET_MEDIATEK_MT6737-COMMON := true
 
-COMMON_PATH := device/mediatek/common
+COMMON_PATH := device/mediatek/mt6737-common
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
