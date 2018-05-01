@@ -58,6 +58,10 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+# YGPS
+PRODUCT_PACKAGES += \
+    YGPS
+
 #### Copy files ####
 
 # Audio
