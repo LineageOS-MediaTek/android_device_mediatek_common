@@ -192,6 +192,10 @@ BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 # Cyanogenmod H/W Hooks
 BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw
 
+# Dexpreopt
+WITH_DEXPREOPT := true
+DONT_DEXPREOPT_PREBUILTS := true
+
 # Disable memcpy opt (for audio libraries)
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
