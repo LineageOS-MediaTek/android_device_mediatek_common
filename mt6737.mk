@@ -164,13 +164,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=0
 
 # Granular Volume Steps
-# PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.config.vc_call_vol_steps=14 \
-#    ro.config.media_vol_steps=30
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.vc_call_vol_steps=14 \
+    ro.config.media_vol_steps=30
 
 # Storage
-# PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.sys.sdcardfs=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=true
 
 # Dalvik Tweak
 PRODUCT_TAGS += dalvik.gc.type-precise
