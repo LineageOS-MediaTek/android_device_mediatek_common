@@ -43,10 +43,6 @@ PRODUCT_PACKAGES += \
     librs_jni \
     libnl_2
 
-# MTK Engineer Mode
-PRODUCT_PACKAGES += \
-    EngineerMode
-
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
@@ -57,10 +53,6 @@ PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf
-
-# YGPS
-PRODUCT_PACKAGES += \
-    YGPS
 
 #### Copy files ####
 
