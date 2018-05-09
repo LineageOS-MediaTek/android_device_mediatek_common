@@ -117,7 +117,6 @@ static void power_hint(struct power_module *module __unused, power_hint_t hint,
 static void set_feature(struct power_module *module __unused,
                 feature_t feature, int state)
 {
-    set_device_specific_feature(module, feature, state);
 }
 
 static int get_feature(struct power_module *module __unused, feature_t feature)
@@ -128,7 +127,7 @@ static int get_feature(struct power_module *module __unused, feature_t feature)
 }
 
 static struct hw_module_methods_t power_module_methods = {
-    .open = power_open,
+    .open = NULL,
 };
 
 struct power_module HAL_MODULE_INFO_SYM = {
