@@ -6,7 +6,7 @@ COMMON_PATH := device/mediatek/mt6737-common
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
 # Headers
-TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
+# TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 #### Packages ####
 
