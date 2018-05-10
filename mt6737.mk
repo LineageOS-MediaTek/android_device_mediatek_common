@@ -229,6 +229,9 @@ BOARD_USES_MTK_HARDWARE := true
 # RIL
 BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril
 
+# Seccomp filter
+BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
+
 # SELinux
 BOARD_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy
 
