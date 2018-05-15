@@ -38,27 +38,19 @@ PRODUCT_PACKAGES += \
     libfmjni \
     FMRadio
 
-# Lights
-PRODUCT_PACKAGES += \
-    lights.mt6737m
-
 # Misc
 PRODUCT_PACKAGES += \
     librs_jni \
     libnl_2
 
-# Power
-PRODUCT_PACKAGES += \
-    power.mt6737m
-
-# USB
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
-
 # Symbols
 PRODUCT_PACKAGES += \
     libshim_gui \
     libshim_ifc
+
+# USB
+PRODUCT_PACKAGES += \
+    com.android.future.usb.accessory
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -237,7 +229,7 @@ BOARD_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy
 
 # Symbols
 LINKER_FORCED_SHIM_LIBS := /system/vendor/lib/libgui_ext.so|libshim_gui.so
-LINKER_FORCED_SHIM_LIBS += /system/lib/libnetutils.so|libshim_ifc.so
+# LINKER_FORCED_SHIM_LIBS += /system/lib/libnetutils.so|libshim_ifc.so:/system/vendor/bin/thermal|libshim_ifc.so
 
 # Wifi
 BOARD_WLAN_DEVICE := MediaTek
