@@ -45,8 +45,10 @@ PRODUCT_PACKAGES += \
 
 # Symbols
 PRODUCT_PACKAGES += \
+    libshim_ui \
     libshim_gui \
-    libshim_ifc
+    libshim_ifc \
+    libshim_misc
 
 # USB
 PRODUCT_PACKAGES += \
@@ -226,10 +228,6 @@ BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
 
 # SELinux
 BOARD_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy
-
-# Symbols
-LINKER_FORCED_SHIM_LIBS := /system/vendor/lib/libgui_ext.so|libshim_gui.so
-# LINKER_FORCED_SHIM_LIBS += /system/lib/libnetutils.so|libshim_ifc.so:/system/vendor/bin/thermal|libshim_ifc.so
 
 # Wifi
 BOARD_WLAN_DEVICE := MediaTek
