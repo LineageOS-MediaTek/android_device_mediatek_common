@@ -17,6 +17,7 @@ LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 # ( _ZN7android14CameraMetadata14getTagFromNameEPKcPKNS_19VendorTagDescriptorEPj )
+include $(CLEAR_VARS)
 LOCAL_SRC_FILES := misc.cpp
 LOCAL_MODULE := libshim_misc
 LOCAL_MODULE_TAGS := optional
