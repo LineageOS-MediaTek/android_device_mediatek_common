@@ -25,6 +25,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
+# Curl
+PRODUCT_PACKAGES += \
+    libcurl
+
 # Display
 PRODUCT_PACKAGES += \
     libion

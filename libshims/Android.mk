@@ -16,7 +16,7 @@ LOCAL_MODULE := libshim_gui
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
-# ( _ZN7android14CameraMetadata14getTagFromNameEPKcPKNS_19VendorTagDescriptorEPj )
+# /system/lib,lib64/libandroid_runtime.so ( _ZN7android14CameraMetadata14getTagFromNameEPKcPKNS_19VendorTagDescriptorEPj )
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := misc.cpp
 LOCAL_MODULE := libshim_misc
