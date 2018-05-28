@@ -22,9 +22,6 @@
     <!-- If this is true, the screen will come on when you plug/unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
-    <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
-    <integer name="config_shutdownBatteryTemperature">600</integer>
-
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
@@ -38,7 +35,6 @@
          USB interfaces.  If the device doesn't want to support tething over USB this should
          be empty.  An example would be "usb.*" -->
     <string-array translatable="false" name="config_tether_usb_regexs">
-        <item>"usb\\d"</item>
         <item>"rndis\\d"</item>
     </string-array>
 
@@ -46,20 +42,13 @@
          Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
          should be empty.  An example would be "softap.*" -->
     <string-array translatable="false" name="config_tether_wifi_regexs">
-        <item>"wlan0"</item>
+        <item>ap\\d</item>
     </string-array>
 
     <string-array translatable="false" name="config_tether_bluetooth_regexs">
-        <item>"bnep\\d"</item>
-        <item>"bt-pan"</item>
+        <item>bt-pan</item>
+        <item>bt-dun</item>
     </string-array>
-
-    <!-- Make things go fast -->
-    <bool name="config_ui_enableFadingMarquee">false</bool>
-
-    <!-- Configuration to restart radio upon PDP_DEACTIVATE with
-         error cause as Regular deactivation(36). -->
-    <bool name="config_restart_radio_on_pdp_fail_regular_deactivation">false</bool>
 
     <string-array translatable="false" name="networkAttributes">
         <item>"wifi,1,1,2,-1,true"</item>
@@ -88,39 +77,20 @@
     <bool translatable="false" name="skip_restoring_network_selection">true</bool>
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
-    <bool translatable="false" name="config_wifi_dual_band_support">false</bool>
+    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
 
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
-    <bool translatable="false" name="config_wifi_background_scan_support">false</bool>
-
-    <bool name="config_enableWifiDisplay">true</bool>
-
-    <bool name="config_wifiDisplaySupportsProtectedBuffers">false</bool>
+    <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
     <!-- Flag indicating if the user is notified when the mobile network access is restricted -->
-    <bool name="config_user_notification_of_restrictied_mobile_access">false</bool>
-
-    <!-- Set this true only if the device has separate attention and notification lights. -->
-    <bool name="config_useAttentionLight">true</bool>
+    <bool name="config_user_notification_of_restrictied_mobile_access">true</bool>
 
     <!-- Display low battery warning when battery level dips to this value -->
-    <integer name="config_lowBatteryWarningLevel">10</integer>
+    <integer name="config_lowBatteryWarningLevel">15</integer>
     
     <!-- Whether safe headphone volume is enabled or not (country specific). -->
     <bool name="config_safe_media_volume_enabled">false</bool>    
-    
-    <!-- Control the behavior when the user long presses the home button.
-            0 - Nothing
-            1 - Menu key
-            2 - Recent apps view in SystemUI
-            3 - Launch assist intent
-            4 - Voice Search
-            5 - In-app Search
-         This needs to match the constants in
-         policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
-    -->
-    <integer name="config_longPressOnHomeBehavior">2</integer>
-    
+
     <!-- Hardware keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
          of the following keys present:
@@ -133,7 +103,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareKeys">79</integer>
+    <integer name="config_deviceHardwareKeys">83</integer>
 
     <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
@@ -147,33 +117,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareWakeKeys">79</integer>
-
-    <!-- Flag indicating whether round icons should be parsed from the application manifest. -->
-    <bool name="config_useRoundIcon">true</bool>
-
-    <bool name="config_automatic_brightness_available">true</bool>
-	
-    <!-- Power Management: Specifies whether to decouple the interactive state of the
-         device from the display on/off state.
-         When false, setInteractive(..., true) will be called before the display is turned on
-         and setInteractive(..., false) will be called after the display is turned off.
-         This mode provides best compatibility for devices that expect the interactive
-         state to be tied to the display state.
-         When true, setInteractive(...) will be called independently of whether the display
-         is being turned on or off.  This mode enables the power manager to reduce
-         clocks and disable the touch controller while the display is on.
-         This resource should be set to "true" when a doze component has been specified
-         to maximize power savings but not all devices support it.
-         Refer to power.h for details.
-    -->    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
-
-    <!-- Control whether Night display is available. This should only be enabled on devices
-         with HWC 2.0 or higher. -->
-    <bool name="config_nightDisplayAvailable">true</bool>
-
-    <!-- disable button backlight settings -->
-    <integer name="config_buttonBrightnessSettingDefault">0</integer>
+    <integer name="config_deviceHardwareWakeKeys">64</integer>
 
     <!-- Enable doze mode
          ComponentName of a dream to show whenever the system would otherwise have
@@ -185,11 +129,24 @@
          Note that doze dreams are not subject to the same start conditions as ordinary dreams.
          Doze dreams will run whenever the power manager is in a dozing state. -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
-    <!-- If true, the doze component is not started until after the screen has been turned off
-         and the screen off animation has been performed. -->
-    <bool name="config_dozeAfterScreenOff">true</bool>
-    
-<!-- Power Management: Specifies whether to decouple the interactive state of the
+
+    <!-- Power Management: Specifies whether to decouple the auto-suspend state of the
+         device from the display on/off state.
+         When false, autosuspend_disable() will be called before the display is turned on
+         and autosuspend_enable() will be called after the display is turned off.
+         This mode provides best compatibility for devices using legacy power management
+         features such as early suspend / late resume.
+         When true, autosuspend_display() and autosuspend_enable() will be called
+         independently of whether the display is being turned on or off.  This mode
+         enables the power manager to suspend the application processor while the
+         display is on.
+         This resource should be set to "true" when a doze component has been specified
+         to maximize power savings but not all devices support it.
+         Refer to autosuspend.h for details.
+    -->
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+
+    <!-- Power Management: Specifies whether to decouple the interactive state of the
          device from the display on/off state.
          When false, setInteractive(..., true) will be called before the display is turned on
          and setInteractive(..., false) will be called after the display is turned off.
@@ -203,15 +160,14 @@
          Refer to power.h for details.
     -->
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
-	
+
+    <!-- If true, the doze component is not started until after the screen has been turned off
+         and the screen off animation has been performed. -->
+    <bool name="config_dozeAfterScreenOff">true</bool>
+    
     <!-- Auto Power Modes is required for Doze and App Standby -->
     <bool name="config_enableAutoPowerModes">true</bool>
-    
-    <!-- Screen brightness used to dim the screen while dozing in a very low power state.
-         May be less than the minimum allowed brightness setting
-         that can be set by the user. -->
-    <integer name="config_screenBrightnessDoze">2</integer>
-	
+
     <!-- Minimum allowable screen brightness to use in a very dark room.
          This value sets the floor for the darkest possible auto-brightness
          adjustment.  It is expected to be somewhat less than the first entry in
@@ -219,21 +175,5 @@
          some range of adjustment to dim the screen further than usual in very
          dark rooms. The contents of the screen must still be clearly visible
          in darkness (although they may not be visible in a bright room). -->
-    <integer name="config_screenBrightnessDark">7</integer>
-		
-    <!-- Whether to use TMO LTE singnal strength threshold -->
-    <bool name="config_regional_lte_singnal_threshold">true</bool>
-    
-    <integer-array name="lte_signal_strength_threshold">
-        <item>-140</item>
-        <item>-125</item>
-        <item>-120</item>
-        <item>-115</item>
-        <item>-105</item>
-        <item>-44</item>
-    </integer-array>      
-
-    <!-- If supported, are dreams enabled? (by default) -->
-    <bool name="config_dreamsEnabledByDefault">false</bool>
-	
+    <integer name="config_screenBrightnessDark">1</integer>
 </resources>	
