@@ -496,3 +496,6 @@ allow cameraserver media_rw_data_file:file { create_file_perms };
 allow cameraserver sdcardfs:dir { w_dir_perms };
 allow cameraserver sdcardfs:file { create_file_perms };
 allow cameraserver sysfs:file getattr;
+
+
+

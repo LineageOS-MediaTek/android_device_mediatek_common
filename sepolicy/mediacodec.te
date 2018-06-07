@@ -186,3 +186,6 @@ allow mediacodec dri_device:chr_file { read write open ioctl };
 # Operation : Migration
 # Purpose : Play tone for alert
 allow mediacodec custom_file:dir search;
+
+allow mediacodec default_android_service:service_manager find;
+
