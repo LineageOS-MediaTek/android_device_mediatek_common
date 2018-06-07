@@ -27,6 +27,9 @@ on post-fs-data
     # clear the sim switch flag
     setprop persist.radio.simswitch ""
 
+    # Fix permission for telephony
+    chmod 0644 /proc/cmdline
+
 on boot
     # Enable KSM
     write /sys/kernel/mm/ksm/pages_to_scan 100

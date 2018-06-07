@@ -1,5 +1,7 @@
 #include <errno.h>
+#include <fcntl.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <linux/sockios.h>
 #include <sys/socket.h>
@@ -10,6 +12,7 @@
 
 #define SIOCSTXQSTATE (SIOCDEVPRIVATE + 0)  //start/stop ccmni tx queue
 #define SIOCSCCMNICFG (SIOCDEVPRIVATE + 1)  //configure ccmni/md remapping
+const char ipv6_proc_path[] = "/proc/sys/net/ipv6/conf";
 
 struct sockaddr_un {
   __kernel_sa_family_t sun_family;
@@ -133,4 +136,71 @@ int ifc_ccmni_md_cfg(const char *ifname, int md_id)
 
     close(ctl_sock);
     return ret;
+}
+
+static int setEnableIPv6(char* ifname, int on) {
+    char *path;
+    const char *value = on ? "0" : "1";
+    ssize_t size = strlen(value);
+
+    //full path: proc/sys/net/ipv6/conf/ifname/disalbe_ipv6
+    asprintf(&path, "%s/%s/%s", ipv6_proc_path, ifname, "disable_ipv6");
+    ALOGE("setEnableIPv6: set path %s to %s", path, value);
+    int fd = open(path, O_WRONLY);
+    if (fd < 0) {
+        ALOGE("Failed to open %s: %s", path, strerror(errno));
+        return -1;
+    }
+
+    if (write(fd, value, size) != size) {
+        ALOGE("Failed to write %s: %s", path, strerror(errno));
+        close(fd);
+        return -1;
+    }
+    close(fd);
+    free(path);
+    return 0;
+}
+
+static int setIPv6DefaultRoute(char* ifname, int on) {
+    char *path;
+    const char *value = on ? "1" : "0";
+    ssize_t size = strlen(value);
+
+    //full path: /proc/sys/net/ipv6/conf/ccmni0/accept_ra_defrtr
+    asprintf(&path, "%s/%s/%s", ipv6_proc_path, ifname, "accept_ra_defrtr");
+    ALOGE("setIPv6DefaultRoute: set path %s to %s", path, value);
+    int fd = open(path, O_WRONLY);
+    if (fd < 0) {
+        ALOGE("Failed to open %s: %s", path, strerror(errno));
+        return -1;
+    }
+
+    if (write(fd, value, size) != size) {
+        ALOGE("Failed to write %s: %s", path, strerror(errno));
+        close(fd);
+        return -1;
+    }
+    close(fd);
+    free(path);
+    return 0;
+}
+
+int ifc_ipv6_trigger_rs(char *ifname){
+    int errNo = setEnableIPv6(ifname, 0);
+     if (errNo < 0) {
+         ALOGE("ifc_ipv6_irat_triger_rs disable interface %s IPv6 fail %d",ifname, errNo);
+     }
+     errNo = setEnableIPv6(ifname, 1);
+     if (errNo < 0) {
+         ALOGE("ifc_ipv6_irat_triger_rs enalbe interface %s IPv6 fail %d",ifname, errNo);
+     }
+
+    //set accept_ra_defrtr 1
+    errNo = setIPv6DefaultRoute(ifname,1);
+    if (errNo < 0) {
+         ALOGE("ifc_ipv6_irat_triger_rs enalbe interface %s accept_ra_defrtr fail %d",ifname, errNo);
+     }
+
+    return 0;
 }
