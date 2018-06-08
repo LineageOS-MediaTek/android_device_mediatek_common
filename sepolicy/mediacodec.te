@@ -188,4 +188,5 @@ allow mediacodec dri_device:chr_file { read write open ioctl };
 allow mediacodec custom_file:dir search;
 
 allow mediacodec default_android_service:service_manager find;
+allow mediacodec pq_service:service_manager find;
 
