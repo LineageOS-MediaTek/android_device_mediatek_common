@@ -195,6 +195,9 @@ USE_CAMERA_STUB := true
 # Charger
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
+# Common Properties
+TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
+
 # Cyanogenmod H/W Hooks
 BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw
 
