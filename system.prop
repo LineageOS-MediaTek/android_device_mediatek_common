@@ -2,15 +2,12 @@
 # system.prop for mt6737-common
 #
 
-# Audio
-ro.camera.sound.forced=0
-ro.audio.silent=0
-
-# Disable dirty region for Mali
-debug.hwui.render_dirty_regions=false
-
 # DRM
 drm.service.enabled=true
+
+# Granular Volume Steps
+ro.config.vc_call_vol_steps=14
+ro.config.media_vol_steps=30
 
 # OMX
 mtk.vdec.waitkeyframeforplay=1
@@ -30,16 +27,14 @@ rild.libargs=-d /dev/ttyC0
 ro.telephony.sim.count=2
 persist.radio.default.sim=0
 persist.radio.mobile.data=0,0
-persist.radio.multisim.config=dsds
-bgw.current3gband=0
+persist.radio.multisim.config=dsds								  
 ril.external.md=0
 ril.telephony.mode=0
 persist.radio.fd.counter=150
 persist.radio.fd.off.counter=50
 persist.radio.fd.r8.counter=150
 persist.radio.fd.off.r8.counter=50
-ro.com.android.mobiledata=false
-ro.mtk_lte_support=1
+ro.com.android.mobiledata=false							   
 ro.boot.opt_lte_support=1
 ro.boot.opt_c2k_lte_mode=0
 ro.boot.opt_md1_support=5
@@ -47,24 +42,17 @@ persist.radio.mtk_ps3_rat=G
 ro.mtk_md_sbp_custom_value=0
 ro.mtk_world_phone_policy=0
 ro.mtk_enable_md1=1
-ro.mtk_fd_support=1
 ro.num_md_protocol=2
 ro.mtk_protocol1_rat_config=Lf/Lt/W/G
-
-# Rotation
-ro.sf.hwrotation=0
-
-# temporary enables NAV bar (soft keys)
-qemu.hw.mainkeys=1
-
-# WFD 
-wfd.dummy.enable=1
 
 # Wifi
 wifi.interface=wlan0
 wifi.direct.interface=p2p0
 
-# WMT 
+# Wifi Display
+wfd.dummy.enable=1
+
+# WMT
 persist.mtk.wcn.combo.chipid=-1
 persist.mtk.wcn.fwlog.status=0
 persist.mtk.wcn.patch.version=-1

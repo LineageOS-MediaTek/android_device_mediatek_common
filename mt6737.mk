@@ -47,6 +47,10 @@ PRODUCT_PACKAGES += \
     librs_jni \
     libnl_2
 
+# Snap
+PRODUCT_PACKAGES += \
+   Snap
+
 # Symbols
 PRODUCT_PACKAGES += \
     libshim_ui \
@@ -131,9 +135,9 @@ PRODUCT_COPY_FILES += \
 
 # Telephony
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/apns-conf.xml:system/etc/apns-conf.xml \
     $(COMMON_PATH)/configs/ecc_list.xml:system/etc/ecc_list.xml \
-    $(COMMON_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
+#   $(COMMON_PATH)/configs/apns-conf.xml:system/etc/apns-conf.xml \
+#   $(COMMON_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
 
 # WIFI
 PRODUCT_COPY_FILES += \
@@ -143,43 +147,14 @@ PRODUCT_COPY_FILES += \
 
 #### Props ####
 
-# Extras
+# Media
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.mount.fs=EXT4 \
-    ro.allow.mock.location=0 \
-    persist.service.acm.enable=0 \
-    persist.radio.apn_delay=5000 \
-    persist.sys.media.use-awesome=false \
-    media.stagefright.use-awesome=false
+    persist.sys.media.use-awesome=false
 
-# Disable ADB Security
+# Android Debugging
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
-    ro.allow.mock.location=1 \
-    ro.debuggable=1 \
-    ro.adb.secure=0 \
-    ro.oem_unlock_supported=1 \
-    sys.usb.config=mtp,adb
-
-# IO Scheduler
-PRODUCT_PROPERTY_OVERRIDES += \
-    sys.io.scheduler=cfq
-
-# Media
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.legacyencoder=0
-
-# Granular Volume Steps
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.vc_call_vol_steps=14 \
-    ro.config.media_vol_steps=30
-
-# Storage
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.sdcardfs=true
-
-# Dalvik Tweak
-PRODUCT_TAGS += dalvik.gc.type-precise
+    ro.adb.secure=0
 
 #### BoardConfigs ####
 
@@ -199,7 +174,11 @@ BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
 
 # Cyanogenmod H/W Hooks
+BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw
+
+# Dalvik Tweak
+PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Dexpreopt
 WITH_DEXPREOPT := true
@@ -212,7 +191,6 @@ TARGET_CPU_MEMCPY_OPT_DISABLE := true
 USE_OPENGL_RENDERER := true
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-PRESENT_TIME_OFFSET_FROM_VSYNC_NS := 0
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 # Enable Minikin text layout engine (will be the default soon)
