@@ -147,10 +147,6 @@ PRODUCT_COPY_FILES += \
 
 #### Props ####
 
-# Media
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.media.use-awesome=false
-
 # Android Debugging
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
