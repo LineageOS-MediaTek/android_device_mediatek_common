@@ -37,11 +37,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Doze
 
-# FMRadio
-PRODUCT_PACKAGES += \
-    libfmjni \
-    FMRadio
-
 # Misc
 PRODUCT_PACKAGES += \
     librs_jni \
