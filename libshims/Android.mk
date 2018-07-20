@@ -31,3 +31,13 @@ LOCAL_MODULE := libshim_ifc
 LOCAL_C_INCLUDES += system/core/libnetutils/include
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := ui/Fence.cpp ui/IDumpTunnel.cpp ui/RefBaseDump.cpp
+LOCAL_SHARED_LIBRARIES := libbinder libui liblog libutils libcutils libhardware libsync
+LOCAL_MODULE := libshim_ui2
+LOCAL_CLANG := true
+LOCAL_C_INCLUDES := frameworks/native/include system/core/include system/core/libsync/include
+LOCAL_CPPFLAGS := -std=c++1y -Weverything -Wno-extra-semi -Wno-zero-length-array -Wno-gnu-statement-expression -D__STDC_FORMAT_MACROS
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)

@@ -59,3 +59,4 @@ persist.mtk.wcn.patch.version=-1
 persist.mtk.wcn.dynamic.dump=0
 service.wcn.driver.ready=no
 service.wcn.coredump.mode=0
+
