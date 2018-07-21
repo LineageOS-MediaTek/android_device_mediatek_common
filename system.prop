@@ -25,7 +25,7 @@ mdc_initial_max_retry=10
 # RIL
 rild.libpath=mtk-ril.so
 rild.libargs=-d /dev/ttyC0
-ro.telephony.ril_class=MT6735
+ro.telephony.ril_class=MediaTekRIL
 ro.telephony.ril.config=fakeiccid
 persist.radio.mobile.data=0,0								
 ril.external.md=0
