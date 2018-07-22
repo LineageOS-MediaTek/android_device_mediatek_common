@@ -49,7 +49,6 @@ PRODUCT_PACKAGES += \
 # Symbols
 PRODUCT_PACKAGES += \
     libshim_ui \
-    libshim_ui2 \
     libshim_gui \
     libshim_ifc \
     libshim_misc
