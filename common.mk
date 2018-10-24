@@ -211,9 +211,6 @@ BOARD_USES_MTK_HARDWARE := true
 # RIL
 BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril
 
-# SELinux
-BOARD_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy
-
 # SW gatekeeper
 BOARD_USE_SOFT_GATEKEEPER := true
 
