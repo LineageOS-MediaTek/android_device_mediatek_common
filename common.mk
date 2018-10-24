@@ -135,6 +135,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,${LOCAL_PATH}/rootdir,root)
 
+# Seccomp policy
+PRODUCT_COPY_FILES += \
+     $(COMMON_PATH)/seccomp/mediacodec.policy:system/vendor/etc/seccomp_policy/mediacodec.policy \
+     $(COMMON_PATH)/seccomp/mediaextractor.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
+
 # Telephony
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/ecc_list.xml:system/etc/ecc_list.xml \
@@ -205,9 +210,6 @@ BOARD_USES_MTK_HARDWARE := true
 
 # RIL
 BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril
-
-# Seccomp filter
-BOARD_SECCOMP_POLICY := $(COMMON_PATH)/seccomp
 
 # SELinux
 BOARD_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy
