@@ -176,10 +176,6 @@ BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 # Common Properties
 TARGET_SYSTEM_PROP := $(COMMON_PATH)/system.prop
 
-# Cyanogenmod H/W Hooks
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw
-
 # Dalvik Tweak
 PRODUCT_TAGS += dalvik.gc.type-precise
 
@@ -201,6 +197,9 @@ USE_MINIKIN := true
 
 # Light HAL
 TARGET_PROVIDES_LIBLIGHT := true
+
+# Lineage H/W Hooks
+BOARD_HARDWARE_CLASS := $(COMMON_PATH)/lineagehw
 
 # Misc
 SUPPRESS_MTK_AUDIO_BLOB_ERR_MSG := true
