@@ -17,6 +17,8 @@ TARGET_MEDIATEK_COMMON := true
 
 COMMON_PATH := device/mediatek/common
 
+include $(COMMON_PATH)/HIDL.mk
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
@@ -197,7 +199,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # Misc
 SUPPRESS_MTK_AUDIO_BLOB_ERR_MSG := true
-BOARD_USE_SOFT_GATEKEEPER := true
 
 # MTK Hardware
 BOARD_USES_MTK_HARDWARE := true
@@ -210,6 +211,9 @@ BOARD_SECCOMP_POLICY := $(COMMON_PATH)/seccomp
 
 # SELinux
 BOARD_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy
+
+# SW gatekeeper
+BOARD_USE_SOFT_GATEKEEPER := true
 
 # Wifi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
