@@ -13,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-TARGET_MEDIATEK_MT6737-COMMON := true
+TARGET_MEDIATEK_COMMON := true
 
-COMMON_PATH := device/mediatek/mt6737-common
+COMMON_PATH := device/mediatek/common
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay

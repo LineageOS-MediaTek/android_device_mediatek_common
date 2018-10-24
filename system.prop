@@ -1,7 +1,3 @@
-#
-# system.prop for mt6737-common
-#
-
 # DRM
 drm.service.enabled=true
 
